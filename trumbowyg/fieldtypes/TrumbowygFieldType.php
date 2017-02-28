@@ -11,6 +11,11 @@ class TrumbowygFieldType extends BaseFieldType
         return Craft::t('Rich Text (Trumbowyg)');
     }
 
+    public function defineContentAttribute()
+    {
+        return array(AttributeType::String, 'column' => ColumnType::Text);
+    }
+
     public function getInputHtml($name, $value)
     {
         $id = craft()->templates->formatInputId($name);
